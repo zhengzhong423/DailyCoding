@@ -1,6 +1,5 @@
 package Salesforce.FileSystem;
 
-import com.sun.deploy.util.StringUtils;
 
 import java.util.LinkedList;
 import java.util.List;
@@ -80,7 +79,7 @@ public class FileTree {
         while(!stack.isEmpty()) {
             dir_list.add(stack.pop());
         }
-        return "/" + StringUtils.join(dir_list, "/");
+        return "/" + String.join( "/", dir_list);
     }
 
     public void list(TreeNode cur) {

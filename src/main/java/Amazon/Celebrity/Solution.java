@@ -18,7 +18,7 @@ public class Solution extends Relation {
         LinkedList<Integer> l = new LinkedList<Integer>();
         for(int i = 0; i < matrix.length; i++)
             l.add(i);
-        LinkedList l_copy = new LinkedList(l);
+        LinkedList<Integer> l_copy = new LinkedList<Integer>(l);
         while(l.size() > 1){
             int a = l.removeFirst();
             int b = l.removeFirst();
