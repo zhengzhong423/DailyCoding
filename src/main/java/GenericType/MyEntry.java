@@ -5,11 +5,11 @@ import java.util.Map;
 /**
  * Created by zhonzhen on 12/23/16.
  */
-public class MyEntry <K, V> implements Map.Entry{
+public class MyEntry <K, V> implements Map.Entry<K, V>{
 
     final K key;
     V value;
-    MyEntry next;
+    MyEntry<K, V> next;
     final int hash;
 
     public MyEntry(K k, V v, int h) {
@@ -19,17 +19,25 @@ public class MyEntry <K, V> implements Map.Entry{
         hash = h;
     }
 
-    public Object getKey() {
+    public K getKey() {
         return key;
     }
 
-    public Object getValue() {
+    public V getValue() {
         return value;
     }
+    
+    public int getHash() {
+		return hash;
+	}
 
-    public Object setValue(Object newValue) {
+    public V setValue(V newValue) {
         V old = value;
-        value = (V)newValue;
+        value = newValue;
         return old;
+    }
+    
+    public MyEntry<K, V> clone() {
+    	return new MyEntry<K, V>(key, value, hash);
     }
 }
