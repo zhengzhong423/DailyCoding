@@ -6,6 +6,7 @@ package LendingClub;
 public class Dog extends Base {
     public static void call() {
         try {
+        	System.out.println(Long.toBinaryString((long)(1l<<32)));
             System.out.println("Dog Call");
         } catch (RuntimeException r) {
             System.out.println(r);

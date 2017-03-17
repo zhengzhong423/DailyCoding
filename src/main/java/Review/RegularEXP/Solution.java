@@ -10,6 +10,7 @@ public class Solution {
     public static void main (String[] args) throws java.lang.Exception
     {
         Pattern p = Pattern.compile("([(]?\\d{3}[-|\\s|)]?\\d{3}[-|\\s]?\\d{4})");
+//        Pattern p = Pattern.compile("([a-z]+)");
         Matcher m = p.matcher("hello(213)509-7057goodboy789-232-3222very234 324 2345aa");
         while (m.find()) {
             System.out.println(m.group());
