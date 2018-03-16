@@ -1,7 +1,6 @@
 package PG.FindGems;
 
 import java.util.Collections;
-import java.util.Comparator;
 import java.util.HashMap;
 import java.util.LinkedList;
 import java.util.List;
@@ -43,7 +42,7 @@ public class FindGems {
 	public static void main(String[] args) {
 		int slotNum = 3;  // K
 		String[] gems = {"g1", "g3", "g1", "g1", "g1", "g1", "g3", "g3"};   // N
-		List<GemInfo> gemsInfoCollection = new LinkedList<>();
+		List<GemInfo> gemsInfoCollection = new LinkedList<GemInfo>();
 		gemsInfoCollection.add(new GemInfo("g1", 1, 3));
 		gemsInfoCollection.add(new GemInfo("g2", 1, 8));
 		gemsInfoCollection.add(new GemInfo("g3", 6, 2));
@@ -54,7 +53,7 @@ public class FindGems {
 	public int maxValue(int slotNum, String[] gems, List<GemInfo> gemsInfoCollection) {
 		Map<String, Integer> gemInRoom = getGemsInRoom(gems);
 		Map<String, GemInfo> gemInfo = getGemInfo(gemsInfoCollection);
-		PriorityQueue<Integer> pq = new PriorityQueue<>(Collections.reverseOrder());// N
+		PriorityQueue<Integer> pq = new PriorityQueue<Integer>(Collections.reverseOrder());// N
 //		PriorityQueue<GemPackage> pq = new PriorityQueue<>(new Comparator<GemPackage>() {
 //			public int compare(GemPackage o1, GemPackage o2) {
 //				return o2.totalVal - o1.totalVal;
@@ -80,7 +79,7 @@ public class FindGems {
 	}
 	
 	private Map<String, Integer> getGemsInRoom(String[] gems) {
-		Map<String, Integer> retMap = new HashMap<>();
+		Map<String, Integer> retMap = new HashMap<String, Integer>();
 		for (String gem: gems) {
 			retMap.put(gem, retMap.containsKey(gem) ? retMap.get(gem) + 1 : 1);
 		}
@@ -88,7 +87,7 @@ public class FindGems {
 	}
 	
 	private Map<String, GemInfo> getGemInfo(List<GemInfo> gemsInfoCollection) {
-		Map<String, GemInfo> retMap = new HashMap<>();
+		Map<String, GemInfo> retMap = new HashMap<String, GemInfo>();
 		for (GemInfo info: gemsInfoCollection) {
 			retMap.put(info.name, info);
 		}

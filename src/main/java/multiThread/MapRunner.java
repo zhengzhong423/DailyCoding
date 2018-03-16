@@ -1,10 +1,10 @@
 package multiThread;
 
+import multiThread.GoSequence.Point;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.Callable;
-
-import multiThread.GoSequence.Point;
 
 public class MapRunner implements Callable<List<Point>>{
 	int M;

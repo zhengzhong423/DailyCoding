@@ -16,6 +16,7 @@ public class GoSequence {
 	}
 	
 	private static final Integer M = 4000;
+
 	private static final Integer N = 2000;
 	
 	private static int[][] matrix = new int[M][N];

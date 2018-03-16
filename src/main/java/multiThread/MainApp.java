@@ -1,13 +1,13 @@
 package multiThread;
 
+import multiThread.GoSequence.Point;
+
 import java.util.LinkedList;
 import java.util.List;
 import java.util.concurrent.ExecutionException;
 import java.util.concurrent.ExecutorService;
 import java.util.concurrent.Executors;
 import java.util.concurrent.Future;
-
-import multiThread.GoSequence.Point;
 
 public class MainApp {
 	
@@ -23,7 +23,8 @@ public class MainApp {
 		long startTime = System.currentTimeMillis();
 		
 		List<Point> ret = new LinkedList<Point>();
-		
+
+
 		int iter = getMaxIter();
 //		System.out.println(iter);
 		ExecutorService executorService = Executors.newFixedThreadPool(2);

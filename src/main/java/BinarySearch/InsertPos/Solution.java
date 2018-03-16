@@ -21,5 +21,4 @@ public class Solution {
 
         return arr[l] < val ? l + 1 : l;
     }
-
 }
